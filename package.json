@@ -1,0 +1,12 @@
+{
+  "name": "avdog",
+  "version": "1.0.0",
+  "description": "an av bot via https://avgle.github.io/doc",
+  "main": "app.js",
+  "author": "retroxs",
+  "license": "ISC",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.30.0",
+    "r2": "^2.0.0"
+  }
+}
