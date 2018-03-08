@@ -7,6 +7,6 @@ module.exports = {
         let start = moment().hours(startTime).minutes(0).second(0)
         let end = moment().hours(endTime).minutes(0).second(0)
         let range = moment.range(start, end);
-        return range.contains(new Date())
+        return range.contains(moment().utcOffset(8))
     }
 }
