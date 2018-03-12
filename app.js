@@ -8,10 +8,10 @@ const bot = new TelegramBot(token, { polling: true });
 
 async function handleAv(msg, match) {
   let chatId = msg.chat.id;
-  let NSFW = (time_range(9, 11) || time_range(14, 18));
+  let NSFW = (time_range(9, 12) || time_range(14, 18));
   if (NSFW) {
     let dailyverse = await r2('http://dailyverse-qoli.appspot.com').text
-    bot.sendMessage(chatId, `工作时间(上午:9-11,下午:14-18)禁止开车:\n${dailyverse.trim()}`)
+    bot.sendMessage(chatId, `工作时间(上午:9-12,下午:14-18)禁止开车:\n${dailyverse.trim()}`)
   } else {
     let av = await r2(`https://api.avgle.com/v1/video/${match[1]}`).json
     console.log(av)
