@@ -18,7 +18,7 @@ function parseHtml(context) {
 }
 
 
-//TODO: download torrnet
+//TODO: download torrent
 async function getInfo(kw) {
   let html = await getHtml(kw);
   let info = parseHtml(html) 

@@ -31,7 +31,7 @@ async function handleAv(msg, match) {
         msg.chat.id,
         "http://pics.dmm.co.jp/mono/movie/adult/h_237ambi048/h_237ambi048pl.jpg",
         {
-          caption: `title:${av.title}\ntorrnetUrl:${av.torretUrl}`
+          caption: `title:${av.title}\ntorrentUrl:${av.torretUrl}`
         }
       );
     } catch (e) {

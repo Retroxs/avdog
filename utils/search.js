@@ -1,7 +1,7 @@
 const r2 = require("r2");
 const cheerio = require("cheerio");
 
-function getTorrnetUrl(kw){
+function getTorrentUrl(kw){
     return `https://torrents.me/s/${kw}:torrentseeker`
 }
 function getUrl(kw) {
@@ -25,7 +25,7 @@ function parseHtml(context) {
 async function getInfo(kw) {
   let html = await getHtml(kw);
   let info = parseHtml(html);
-  let torretUrl = getTorrnetUrl(kw)
+  let torretUrl = getTorrentUrl(kw)
   return {...info,torretUrl};
 }
 
