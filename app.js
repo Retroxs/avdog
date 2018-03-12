@@ -26,7 +26,7 @@ async function handleAv(msg, match) {
     // }
     try {
       let av = await getInfo(match[1]);
-      if (!/http/.test(av.cover)) {
+      if (/111/.test(av.cover)) {
         bot.sendMessage(chatId, "未找到相应资源,请尝试新车牌");
       } else {
         bot.sendPhoto(msg.chat.id, av.cover, {
