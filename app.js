@@ -24,18 +24,17 @@ async function handleAv(msg, match) {
     // } else {
     //   bot.sendMessage(chatId, "未找到相应资源,请尝试新车牌")
     // }
-
     try {
       let av = await getInfo(match[1]);
-      bot.sendPhoto(
-        msg.chat.id,
-        "http://pics.dmm.co.jp/mono/movie/adult/h_237ambi048/h_237ambi048pl.jpg",
-        {
+      if (!/http/.test(av.cover)) {
+        bot.sendMessage(chatId, "未找到相应资源,请尝试新车牌");
+      } else {
+        bot.sendPhoto(msg.chat.id, av.cover, {
           caption: `title:${av.title}\ntorrentUrl:${av.torretUrl}`
-        }
-      );
+        });
+      }
     } catch (e) {
-      console.log(e);
+      bot.sendMessage(chatId, "出了点小意外呢");
     }
   }
 }
